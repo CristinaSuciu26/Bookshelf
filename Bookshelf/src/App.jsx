@@ -3,7 +3,6 @@ import "./App.css";
 import Header from "./components/header/Header";
 import { ThemeProvider } from "styled-components";
 import { dark, light } from "./components/themes/themes";
-import ThemeButton from "./components/themeButton/ThemeButton";
 import { GlobalStyles } from "./components/themes/globalStyles";
 
 function App() {
@@ -12,13 +11,7 @@ function App() {
     <>
       <ThemeProvider theme={isDark ? dark : light}>
         <GlobalStyles />
-        <Header>
-          {" "}
-          <ThemeButton
-            isDark={isDark}
-            toggle={() => setIsDark((prev) => !prev)}
-          />
-        </Header>
+        <Header isDark={isDark} toggle={() => setIsDark((prev) => !prev)} />
       </ThemeProvider>
     </>
   );

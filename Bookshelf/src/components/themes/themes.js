@@ -6,6 +6,7 @@ export const light = {
   categoriesText: "#11111199",
   authorName: "#B4AFAF",
   activeText: "#4F2EE8",
+  activeLink: "#EAC645",
   toggleBg: "linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%)",
 };
 
@@ -17,5 +18,6 @@ export const dark = {
   categoriesText: "#FFFFFF99",
   authorName: "#B4AFAF",
   activeText: "#EAC645",
+  activeLink: "#EAC645",
   toggleBg: "linear-gradient(180deg, #4F2EE8 0%, #686868 100%)",
 };
