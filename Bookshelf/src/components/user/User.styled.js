@@ -18,7 +18,7 @@ export const UserContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 4px;
+    gap: 7px;
   }
 `;
 
@@ -26,6 +26,7 @@ export const Image = styled.img`
   width: 37px;
   height: 37px;
   border-radius: 18px;
+  object-fit: cover;
 `;
 
 export const UserWrapper = styled.div`
