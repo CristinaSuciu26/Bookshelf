@@ -17,7 +17,7 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
     color: ${n=>n.theme.text};
     transition: background-color 0.3s, color 0.3s;
   }
-`,Ub={body:"#F6F6F6",accent:"#4F2EE8",headerBg:"#FFFFFF",text:"#111111",categoriesText:"#11111199",authorName:"#B4AFAF",activeText:"#4F2EE8",activeLink:"#EAC645",toggleBg:"linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%)"},jb={body:"#202024",accent:"#4F2EE8",headerBg:"#111111",text:"#FFFFFF",categoriesText:"#FFFFFF99",authorName:"#B4AFAF",activeText:"#EAC645",activeLink:"#EAC645",toggleBg:"linear-gradient(180deg, #4F2EE8 0%, #686868 100%)"},ny=T.createContext(null),wb=()=>T.useContext(ny);function Bb({children:n}){const[r,c]=T.useState(!1),o=()=>{c(s=>!s)};return R.jsx(ny.Provider,{value:{isDark:r,toggleTheme:o},children:R.jsxs(Rb,{theme:r?jb:Ub,children:[R.jsx(Nb,{}),n]})})}const Hb=lt.div`
+`,Ub={body:"#F6F6F6",accent:"#4F2EE8",headerBg:"#FFFFFF",text:"#111111",input:"#111111",textInput:"#FFFFFF",categoriesText:"#11111199",authorName:"#B4AFAF",activeText:"#4F2EE8",activeLink:"#EAC645",toggleBg:"linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%)"},jb={body:"#202024",accent:"#4F2EE8",headerBg:"#111111",text:"#FFFFFF",input:"#FFFFFF",textInput:"#111111",categoriesText:"#FFFFFF99",authorName:"#B4AFAF",activeText:"#EAC645",activeLink:"#EAC645",toggleBg:"linear-gradient(180deg, #4F2EE8 0%, #686868 100%)"},ny=T.createContext(null),wb=()=>T.useContext(ny);function Bb({children:n}){const[r,c]=T.useState(!1),o=()=>{c(s=>!s)};return R.jsx(ny.Provider,{value:{isDark:r,toggleTheme:o},children:R.jsxs(Rb,{theme:r?jb:Ub,children:[R.jsx(Nb,{}),n]})})}const Hb=lt.div`
   display: flex;
   color: ${({theme:n})=>n.text};
   margin-left: 24px;
@@ -198,6 +198,7 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
   width: 293px;
   height: 50px;
   border-radius: 40px;
+  background-color: ${({theme:n})=>n.body};
   border: 2px solid ${({theme:n})=>n.text};
   color: ${({theme:n})=>n.text};
   font-size: 16px;
@@ -224,11 +225,12 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
 `,BS=lt.div`
   padding-right: 36px;
 `,HS=lt.button`
+  color: ${({theme:n})=>n.textInput};
+  background-color: ${({theme:n})=>n.input};
   width: 312px;
   height: 50px;
   border-radius: 40px;
-  color: ${({theme:n})=>n.text};
-  background-color: ${({theme:n})=>n.header};
+
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
@@ -238,12 +240,14 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
   text-transform: uppercase;
   gap: 20px;
   padding-right: 36px;
-`,op=lt.div`
+`,op=lt.button`
+  background-color: transparent;
+  border: none;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  color: #11111180;
+  color: ${({theme:n})=>n.text};
 `;function qS({onClose:n,openLogin:r}){const{login:c}=T.useContext(vn),[o,s]=T.useState({name:"",email:"",password:""}),d=v=>{s({...o,[v.target.name]:v.target.value})},m=v=>{v.preventDefault();const y=JSON.parse(localStorage.getItem("users"))||[];if(y.find(b=>b.email===o.email)){Et.warning("You already have an account, please sign in"),r(),n();return}const x={name:o.name,email:o.email,password:o.password};y.push(x),localStorage.setItem("users",JSON.stringify(y)),Et.success("Registered successfully!"),c(x),n()};return R.jsx(R.Fragment,{children:R.jsx(US,{children:R.jsxs(jS,{onSubmit:m,children:[R.jsxs(wS,{onClick:n,children:[" ",R.jsx("svg",{width:"17",height:"17",children:R.jsx("use",{href:"/Bookshelf/sprite.svg#icon-close"})})]}),R.jsxs(Fc,{children:[" ",R.jsx(kc,{type:"text",placeholder:"Name",name:"name",required:!0,value:o.name,onChange:d}),R.jsx($c,{})]}),R.jsxs(Fc,{children:[R.jsx(kc,{type:"email",placeholder:"Email",required:!0,name:"email",value:o.email,onChange:d}),R.jsx($c,{children:R.jsx("svg",{width:"19",height:"17",children:R.jsx("use",{href:"/Bookshelf/sprite.svg#icon-email"})})})]}),R.jsxs(Fc,{children:[R.jsx(kc,{type:"password",placeholder:"Password",name:"password",value:o.password,onChange:d,required:!0}),R.jsxs($c,{children:[" ",R.jsx("svg",{width:"15",height:"15",children:R.jsx("use",{href:"/Bookshelf/sprite.svg#icon-password"})})]})]}),R.jsxs(BS,{children:[" ",R.jsx(HS,{type:"submit",children:"Sign up"})]}),R.jsxs(LS,{children:[R.jsx(op,{type:"button",disabled:!0,children:"Sign Up"})," ",R.jsx(op,{type:"button",onClick:r,children:"Sign In"})]})]})})})}const YS=lt.div`
   background-color: #4f2ee8;
   width: 100%;
@@ -274,6 +278,7 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
   width: 293px;
   height: 50px;
   border-radius: 40px;
+  background-color: ${({theme:n})=>n.body};
   border: 2px solid ${({theme:n})=>n.text};
   color: ${({theme:n})=>n.text};
   font-size: 16px;
@@ -303,8 +308,8 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
   width: 312px;
   height: 50px;
   border-radius: 40px;
-  color: ${({theme:n})=>n.text};
-  background-color: ${({theme:n})=>n.header};
+  color: ${({theme:n})=>n.textInput};
+  background-color: ${({theme:n})=>n.input};
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
@@ -314,13 +319,15 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
   text-transform: uppercase;
   gap: 20px;
   padding-right: 36px;
-`,dp=lt.div`
+`,dp=lt.button`
+  background-color: transparent;
+  border: none;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  color: #11111180;
-`;function KS({onClose:n,openRegister:r}){const{login:c}=T.useContext(vn),[o,s]=T.useState({email:"",password:""}),d=v=>{s({...o,[v.target.name]:v.target.value})},m=v=>{v.preventDefault();const p=(JSON.parse(localStorage.getItem("users"))||[]).find(x=>x.email===o.email&&x.password===o.password);p?(Et.success("Logged in successfully!"),c(p),n()):Et.error("Email or password incorrect")};return R.jsx(R.Fragment,{children:R.jsx(YS,{children:R.jsxs(GS,{onSubmit:m,children:[R.jsxs(XS,{onClick:n,children:[" ",R.jsx("svg",{width:"17",height:"17",children:R.jsx("use",{href:"/Bookshelf/sprite.svg#icon-close"})})]}),R.jsxs(sp,{children:[R.jsx(cp,{type:"email",placeholder:"Email",required:!0,name:"email",value:o.email,onChange:d}),R.jsx(fp,{children:R.jsx("svg",{width:"19",height:"17",children:R.jsx("use",{href:"/Bookshelf/sprite.svg#icon-email"})})})]}),R.jsxs(sp,{children:[R.jsx(cp,{type:"password",placeholder:"Password",name:"password",value:o.password,onChange:d,required:!0}),R.jsxs(fp,{children:[" ",R.jsx("svg",{width:"15",height:"15",children:R.jsx("use",{href:"/Bookshelf/sprite.svg#icon-password"})})]})]}),R.jsxs(QS,{children:[" ",R.jsx(ZS,{type:"submit",children:"Sign In"})]}),R.jsxs(VS,{children:[R.jsx(dp,{type:"button",onClick:r,children:"Sign Up"}),R.jsx(dp,{type:"button",disabled:!0,children:"Sign In"})]})]})})})}const JS=lt.div`
+  color: ${({theme:n})=>n.text};
+`;function KS({onClose:n,openRegister:r}){const{login:c}=T.useContext(vn),[o,s]=T.useState({email:"",password:""}),d=v=>{s({...o,[v.target.name]:v.target.value})},m=v=>{v.preventDefault();const p=(JSON.parse(localStorage.getItem("users"))||[]).find(x=>x.email===o.email&&x.password===o.password);p?(Et.success("Logged in successfully!"),c(p),n()):Et.error("Email or password incorrect")};return R.jsx(R.Fragment,{children:R.jsx(YS,{children:R.jsxs(GS,{onSubmit:m,children:[R.jsxs(XS,{onClick:n,children:[" ",R.jsx("svg",{width:"17",height:"17",children:R.jsx("use",{href:"/Bookshelf/sprite.svg#icon-close"})})]}),R.jsxs(sp,{children:[R.jsx(cp,{type:"email",placeholder:"Email",required:!0,name:"email",value:o.email,onChange:d}),R.jsx(fp,{children:R.jsx("svg",{width:"19",height:"17",children:R.jsx("use",{href:"/Bookshelf/sprite.svg#icon-email"})})})]}),R.jsxs(sp,{children:[R.jsx(cp,{type:"password",placeholder:"Password",name:"password",value:o.password,onChange:d,required:!0}),R.jsxs(fp,{children:[" ",R.jsx("svg",{width:"15",height:"15",children:R.jsx("use",{href:"/Bookshelf/sprite.svg#icon-password"})})]})]}),R.jsx(QS,{children:R.jsx(ZS,{type:"submit",children:"Sign In"})}),R.jsxs(VS,{children:[R.jsx(dp,{type:"button",onClick:r,children:"Sign Up"}),R.jsx(dp,{type:"button",disabled:!0,children:"Sign In"})]})]})})})}const JS=lt.div`
   display: none;
 
   @media (min-width: 768px) {
@@ -349,7 +356,8 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
   display: flex;
   gap: 24px;
   align-items: center;
-  padding-right: 24px;
+  margin-top: 48px;
+  padding-right: 107px;
   padding-left: 20px;
 `,$S=lt.div`
   position: fixed;
@@ -367,9 +375,9 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
   display: flex;
   flex-direction: column;
   justify-content: center;
-  // align-items: center;
+  align-items: center;
 
-  gap: 40px;
+  // gap: 40px;
 `,WS=lt.button`
   position: relative;
   bottom: 1px;
@@ -379,20 +387,22 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
   border: none;
   color: ${({theme:n})=>n.text};
 `,IS=lt.div`
-  position: absolute;
-  bottom: 23px;
-  left: 139px;
+  margin-right: 57px;
   display: flex;
   align-items: center;
   gap: 48px;
 `,PS=lt.div`
   position: relative;
+  width: 100vw;
   height: 64px;
-  background-color: #ffffff;
+  gap: 18px;
+  background-color: ${({theme:n})=>n.headerBg};
   display: flex;
+  align-items: center;
+  justify-content: center;
 `,t_=lt.div`
-margin-top: 8px;
-`;function e_({onClose:n,setShowRegister:r}){return R.jsx(R.Fragment,{children:R.jsx($S,{children:R.jsxs(FS,{children:[R.jsxs(PS,{children:[" ",R.jsxs(t_,{children:[" ",R.jsx(cf,{})]}),R.jsxs(IS,{children:[" ",R.jsx(WS,{onClick:n,children:R.jsx("svg",{width:"17",height:"17",children:R.jsx("use",{href:"/Bookshelf/sprite.svg#icon-close"})})}),R.jsx(Cf,{})]})]}),R.jsx(kS,{children:R.jsxs(dy,{onClick:()=>{n(),r(!0)},children:["Sign Up",R.jsx("svg",{width:"15",height:"15",children:R.jsx("use",{href:"/Bookshelf/sprite.svg#icon-arrow-signup"})})]})})]})})})}const a_=lt.div`
+  margin-top: 8px;
+`;function e_({onClose:n,setShowRegister:r}){return R.jsx(R.Fragment,{children:R.jsx($S,{children:R.jsxs(FS,{children:[R.jsxs(PS,{children:[" ",R.jsx(t_,{children:R.jsx(cf,{})}),R.jsxs(IS,{children:[" ",R.jsx(WS,{onClick:n,children:R.jsx("svg",{width:"17",height:"17",children:R.jsx("use",{href:"/Bookshelf/sprite.svg#icon-close"})})}),R.jsx(Cf,{})]})]}),R.jsx(kS,{children:R.jsxs(dy,{onClick:()=>{n(),r(!0)},children:["Sign Up",R.jsx("svg",{width:"15",height:"15",children:R.jsx("use",{href:"/Bookshelf/sprite.svg#icon-arrow-signup"})})]})})]})})})}const a_=lt.div`
   position: relative;
   width: 100vw;
   height: 100vh;
