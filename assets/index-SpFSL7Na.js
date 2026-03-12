@@ -404,7 +404,8 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
   max-width: 100%;
   height: auto;
   object-fit: contain;
-  margin-top: 100px;
+  position: absolute;
+  bottom: 0px;
 
   @media (min-width: 425px) {
     display: none;
