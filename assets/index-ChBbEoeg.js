@@ -401,11 +401,11 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
 `,t_=lt.div`
   margin-top: 8px;
 `,e_=lt.img`
-  max-width: 100%;
+  width: 409px;
   height: auto;
   object-fit: contain;
   position: absolute;
-  bottom: 0px;
+  bottom: -30px;
 
   @media (min-width: 425px) {
     display: none;
