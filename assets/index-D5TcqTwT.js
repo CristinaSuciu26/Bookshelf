@@ -378,7 +378,7 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
   align-items: center;
 `,WS=lt.button`
   position: relative;
-  bottom: 1px;
+
   left: 141px;
   cursor: pointer;
   background: transparent;
@@ -389,6 +389,7 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
   display: flex;
   align-items: center;
   gap: 48px;
+  margin-top: 10px;
 `,PS=lt.div`
   position: relative;
   width: 100vw;
