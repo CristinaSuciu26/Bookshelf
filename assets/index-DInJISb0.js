@@ -187,8 +187,8 @@ Please change the parent <Route path="${j}"> to <Route path="${j==="/"?"*":`${j}
   border: 5px solid #f3f3f3; /* Light grey */
   border-top: 5px solid #3498db; /* Blue */
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   animation: spin 2s linear infinite;
 
   @keyframes spin {
