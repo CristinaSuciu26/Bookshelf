@@ -797,6 +797,7 @@ Please change the parent <Route path="${z}"> to <Route path="${z==="/"?"*":`${z}
     rgba(255, 255, 255, 1) 0%,
     rgba(79, 46, 232, 1) 91%
   );
+  z-index: 16;
 `,LS=Z.div`
   display: flex;
   flex-direction: column;
@@ -849,6 +850,7 @@ Please change the parent <Route path="${z}"> to <Route path="${z==="/"?"*":`${z}
     rgba(255, 255, 255, 1) 0%,
     rgba(79, 46, 232, 1) 91%
   );
+  z-index: 16;
 `,ZS=Z.div`
   height: 100%;
   display: flex;
@@ -861,8 +863,6 @@ Please change the parent <Route path="${z}"> to <Route path="${z==="/"?"*":`${z}
   align-items: center;
   gap: 48px;
   margin-top: 10px;
-
-  
 `,VS=Z.div`
   position: relative;
   width: 100vw;
